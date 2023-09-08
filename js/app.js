@@ -3,7 +3,7 @@
  * app.js */
 
 const startButton = document.getElementById("btn__reset");
-// const letterButton = document.querySelector("#qwerty");
+const letterButtons = document.querySelectorAll(".key");
 
 let game;
 
@@ -12,8 +12,10 @@ startButton.addEventListener("click", (e) => {
   game.startGame();
 });
 
-// letterButton.addEventListener("click", (event) => {
-//   if (event.target.className === "key") {
-//     game.handleInteraction(event.target);
-//   }
-// });
+letterButtons.forEach((letterButton) => {
+  letterButton.addEventListener("click", (event) => {
+    if (event.target.className === "key") {
+      game.handleInteraction(event.target);
+    }
+  });
+});

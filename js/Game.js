@@ -32,15 +32,13 @@ class Game {
 
   checkForWin() {
     const allLetters = document.querySelectorAll(".letter");
-    let win = true;
+    let isWin = true;
     allLetters.forEach((letter) => {
       if (letter.classList.contains("hide")) {
-        win = false;
-      } else {
-        win = true;
+        isWin = false;
       }
     });
-    return win;
+    return isWin;
   }
 
   removeLife() {
@@ -72,19 +70,19 @@ class Game {
     }
   }
 
-  // handleInteraction(button) {
-  //   const buttonLetter = button.textContent;
+  handleInteraction(button) {
+    button.disabled = true;
+    const letter = button.textContent;
 
-  //   if(checkLetter(buttonLetter) === true){
-
-  //     showMatchedLetter(buttonLetter);
-  //   } else {
-  //     this.removeLife();
-  //   }
-
-  //   if(this.checkForWin() === true){
-  //     this.gameOver()
-  //   }
-
-  // }
+    if (this.activePhrase.checkLetter(letter) === true) {
+      button.classList.add("chosen");
+      this.activePhrase.showMatchedLetter(letter);
+      if (this.checkForWin() === true) {
+        this.gameOver(true);
+      }
+    } else {
+      button.classList.add("wrong");
+      this.removeLife();
+    }
+  }
 }
