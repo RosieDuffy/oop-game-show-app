@@ -6,6 +6,11 @@ class Phrase {
   constructor(phrase) {
     this.phrase = phrase.toLowerCase();
   }
+
+  // Add Phrase To Display  /**
+  // * Display phrase on game board
+  // */
+
   addPhraseToDisplay() {
     const phraseLocation = document.getElementById("phrase");
 
@@ -19,7 +24,7 @@ class Phrase {
     });
   }
 
-  //   /**
+  //  Check Letter /**
   // * Checks if passed letter is in phrase
   // * @param (string) letter - Letter to check
   // */
@@ -32,10 +37,10 @@ class Phrase {
     }
   }
 
-  /**
-   * Displays passed letter on screen after a match is found
-   * @param (string) letter - Letter to display
-   */
+  // Show Matched Letter /**
+  //  * Displays passed letter on screen after a match is found
+  //  * @param (string) letter - Letter to display
+  //  */
 
   showMatchedLetter(inputLetter) {
     const allLetters = document.querySelectorAll(".letter");

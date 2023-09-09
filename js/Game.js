@@ -14,17 +14,37 @@ class Game {
     ];
     this.activePhrase = null;
   }
+
+  //  Get Random Phrase /**
+  // * Selects random phrase from phrases property
+  // * @return {Object} Phrase object chosen to be used
+  // */
+
   getRandomPhrase() {
     return this.phrases[Math.floor(Math.random() * this.phrases.length)];
   }
+
+  // Start Game  /**
+  // * Begins game by selecting a random phrase and displaying it to user
+  // */
+
   startGame() {
+    const phraseLocation = document.getElementById("phrase");
+    const lifeHearts = document.querySelectorAll(".tries img");
     const screenOverlay = document.getElementById("overlay");
+
+    phraseLocation.innerHTML = "";
     screenOverlay.style.display = "none";
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
+    letterButtons.forEach((letterButton) => {
+      letterButton.disabled = false;
+      letterButton.classList.remove("chosen", "wrong");
+    });
+    lifeHearts.forEach((heart) => (heart.src = "images/liveHeart.png"));
   }
 
-  //   /**
+  //  Check For Win /**
   // * Checks for winning move
   // * @return {boolean} True if game has been won, false if game wasn't
   // won
@@ -40,9 +60,14 @@ class Game {
     });
     return isWin;
   }
+  // Remove Life  /**
+  // * Increases the value of the missed property
+  // * Removes a life from the scoreboard
+  // * Checks if player has remaining lives and ends game if player is out
+  // */
 
   removeLife() {
-    let lifeHearts = document.querySelectorAll(".tries img");
+    const lifeHearts = document.querySelectorAll(".tries img");
 
     if (this.missed < 5) {
       lifeHearts[this.missed].src = "images/lostHeart.png";
@@ -54,13 +79,14 @@ class Game {
     }
   }
 
+  //  Game Over /**
+  // * Displays game over message
+  // * @param {boolean} gameWon - Whether or not the user won the game
+  // */
+
   gameOver(gameWon) {
     const screenOverlay = document.getElementById("overlay");
     const gameOverMessage = document.getElementById("game-over-message");
-    startButton.addEventListener('click', (e) => {
-      
-
-    })
 
     screenOverlay.style.display = "flex";
     if (gameWon === true) {
@@ -73,6 +99,11 @@ class Game {
       gameOverMessage.textContent = "Sorry, you lost!";
     }
   }
+
+  // Handle Interaction  /**
+  // * Handles onscreen keyboard button clicks
+  // * @param (HTMLButtonElement) button - The clicked button element
+  // */
 
   handleInteraction(button) {
     button.disabled = true;
