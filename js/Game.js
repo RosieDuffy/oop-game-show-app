@@ -57,6 +57,10 @@ class Game {
   gameOver(gameWon) {
     const screenOverlay = document.getElementById("overlay");
     const gameOverMessage = document.getElementById("game-over-message");
+    startButton.addEventListener('click', (e) => {
+      
+
+    })
 
     screenOverlay.style.display = "flex";
     if (gameWon === true) {
