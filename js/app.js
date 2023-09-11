@@ -19,3 +19,15 @@ letterButtons.forEach((letterButton) => {
     }
   });
 });
+
+document.addEventListener("keyup", (e) => {
+  const key = e.key.toLowerCase();
+  let matchingButton = null;
+  for (const letterButton of letterButtons) {
+    if (key === letterButton.textContent) {
+      matchingButton = letterButton;
+      game.handleInteraction(matchingButton);
+      break;
+    }
+  }
+});

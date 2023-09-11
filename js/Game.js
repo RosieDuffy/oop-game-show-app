@@ -87,15 +87,23 @@ class Game {
   gameOver(gameWon) {
     const screenOverlay = document.getElementById("overlay");
     const gameOverMessage = document.getElementById("game-over-message");
+    const radialGradient =
+      "radial-gradient(circle, rgba(205,240,12,1) 0%, rgba(14,133,148,1) 100%)";
 
     screenOverlay.style.display = "flex";
     if (gameWon === true) {
       screenOverlay.classList.remove("start");
       screenOverlay.classList.add("win");
+      screenOverlay.style.background =
+        "radial-gradient(circle, chartreuse, cadetblue, teal)";
+      startButton.style.background = "paleturquoise";
       gameOverMessage.textContent = "Congratulations, you win!";
     } else {
       screenOverlay.classList.remove("start");
       screenOverlay.classList.add("lose");
+      screenOverlay.style.background =
+        "radial-gradient(circle, lightcoral, mediumorchid, indigo)";
+      startButton.style.background = "pink";
       gameOverMessage.textContent = "Sorry, you lost!";
     }
   }
