@@ -28,6 +28,12 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=5b46a8&c2=9f66aa&gt=l&gd=dbr
+*/
+background: #5B46A8;
+background: linear-gradient(315deg, #5B46A8, #9F66AA);
 }
 
 li, ol, ul {
@@ -101,6 +107,7 @@ button {
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 }
 
 .space {
@@ -111,7 +118,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: var(--color-start);
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -130,6 +137,10 @@ button {
   justify-content: center;
 }
 
+.key{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+
 .chosen {
   background: #3a3f58;
   border-radius: 5px;
@@ -138,7 +149,7 @@ button {
 }
 
 .wrong {
-  background: #f7a964;
+  background: #f76464;
   color: #FFFFFF;
 }
 
@@ -180,7 +191,8 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background: #2D65B3;
+  background: radial-gradient(at center, #2D65B3, #711E8F);;
 }
 
 .start a {

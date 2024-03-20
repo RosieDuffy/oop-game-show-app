@@ -24,7 +24,7 @@ document.addEventListener("keyup", (e) => {
   const key = e.key.toLowerCase();
   let matchingButton = null;
   for (const letterButton of letterButtons) {
-    if (key === letterButton.textContent) {
+    if (key === letterButton.textContent && !letterButton.disabled) {
       matchingButton = letterButton;
       game.handleInteraction(matchingButton);
       break;
