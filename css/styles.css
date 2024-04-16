@@ -66,6 +66,18 @@ button {
   cursor: pointer;
 }
 
+@media screen and (max-width: 580px) {
+  h2{
+    font-size: 28px;
+  }
+
+  button {
+    margin: 2px;
+    font-size: 14px;
+    padding: .3rem .5rem;
+  }
+}
+
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
@@ -103,7 +115,8 @@ button {
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
-  margin-right: 2px;
+  margin-right: 4px;
+  margin-top: 10px;
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
@@ -129,6 +142,23 @@ button {
   animation-duration: .5s;
 }
 
+@media screen and (max-width: 580px) {
+  .letter{
+    height: 45px;
+    width: 45px;
+    padding: 10px 1px 0 1px;
+    
+  }
+
+  .show {
+    height: 45px;
+    width: 45px;
+    padding: 10px 1px 0 1px;
+  }
+
+  
+
+}
 
 /* Keyboard */
 
