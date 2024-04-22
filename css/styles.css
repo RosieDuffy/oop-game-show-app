@@ -28,10 +28,6 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
-  /*
-* Created with https://www.css-gradient.com
-* Gradient link: https://www.css-gradient.com/?c1=5b46a8&c2=9f66aa&gt=l&gd=dbr
-*/
 background: #5B46A8;
 background: linear-gradient(315deg, #5B46A8, #9F66AA);
 }
